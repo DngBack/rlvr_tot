@@ -1,0 +1,17 @@
+{
+  "epoch": 2,
+  "timestamp": "2025-05-16T14:13:45.520532",
+  "training": {
+    "loss": 0.08841873547152646,
+    "reward": 1.004830052194329,
+    "kl": 0.01023993143371283,
+    "entropy": 0.10154572922170203
+  },
+  "evaluation": {
+    "pass@1": 0.95672360340804,
+    "pass@5": 1.700220861986924,
+    "reasoning_diversity_index": 1.4574768505779532,
+    "computational_efficiency_score": 1.6124772832772245,
+    "generalization_gap": 0.19772049286066984
+  }
+}

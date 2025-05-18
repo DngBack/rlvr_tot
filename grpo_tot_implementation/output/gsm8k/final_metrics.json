@@ -1,0 +1,10 @@
+{
+  "final_evaluation": {
+    "pass@1": 1.5748183806318008,
+    "pass@5": 1.803583401131093,
+    "reasoning_diversity_index": 1.7223172518927123,
+    "computational_efficiency_score": 1.5767222132066252,
+    "generalization_gap": 0.33997024895298605
+  },
+  "timestamp": "2025-05-16T14:13:45.010733"
+}

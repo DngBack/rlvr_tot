@@ -1,0 +1,20 @@
+{
+  "gsm8k": {
+    "train_examples": 3,
+    "test_examples": 2,
+    "train_path": "gsm8k/train.parquet",
+    "test_path": "gsm8k/test.parquet"
+  },
+  "humaneval": {
+    "train_examples": 131,
+    "test_examples": 33,
+    "train_path": "humaneval/train.parquet",
+    "test_path": "humaneval/test.parquet"
+  },
+  "mbpp": {
+    "train_examples": 2,
+    "test_examples": 1,
+    "train_path": "mbpp/train.parquet",
+    "test_path": "mbpp/test.parquet"
+  }
+}

@@ -1,0 +1,71 @@
+{
+    "data": {
+        "train_files": [
+            "/home/ubuntu/data/gsm8k/train.parquet",
+            "/home/ubuntu/data/math/train.parquet"
+        ],
+        "val_files": [
+            "/home/ubuntu/data/gsm8k/test.parquet",
+            "/home/ubuntu/data/math/test.parquet"
+        ],
+        "test_files": [
+            "/home/ubuntu/data/gsm8k/test.parquet",
+            "/home/ubuntu/data/math/test.parquet"
+        ],
+        "train_batch_size": 32,
+        "val_batch_size": 32,
+        "test_batch_size": 32,
+        "max_prompt_length": 1024,
+        "max_response_length": 1024,
+        "filter_overlong_prompts": true,
+        "truncation": "error"
+    },
+    "model": {
+        "model_path": "Qwen/Qwen2-7B-Instruct",
+        "model_type": "hf",
+        "use_remove_padding": true,
+        "enable_gradient_checkpointing": true
+    },
+    "training": {
+        "epochs": 15,
+        "save_freq": 5,
+        "eval_freq": 2,
+        "output_dir": "/home/ubuntu/grpo_tot_implementation/output",
+        "lr": 1e-6,
+        "ppo_mini_batch_size": 256,
+        "ppo_micro_batch_size_per_gpu": 16,
+        "use_kl_loss": true,
+        "kl_loss_coef": 0.001,
+        "kl_loss_type": "low_var_kl",
+        "entropy_coeff": 0,
+        "critic_warmup": 0,
+        "logger": ["console", "wandb"],
+        "project_name": "grpo_tot_hybrid",
+        "experiment_name": "qwen2_7b_tot_enhanced",
+        "n_gpus_per_node": 8,
+        "nnodes": 1
+    },
+    "tot": {
+        "branching_factor": 5,
+        "max_depth": 12,
+        "initial_phase": "exploration",
+        "phase_transition_epoch": 8,
+        "exploration_temp": 0.8,
+        "backtracking_threshold": 0.3,
+        "alpha_exploration": 0.3,
+        "beta_exploration": 0.5,
+        "gamma_exploration": 0.2,
+        "alpha_exploitation": 0.7,
+        "beta_exploitation": 0.2,
+        "gamma_exploitation": 0.1,
+        "lambda_c": 0.4,
+        "lambda_n": 0.3,
+        "lambda_e": 0.2,
+        "lambda_g": 0.1
+    },
+    "evaluation": {
+        "metrics": ["pass@1", "pass@5", "reasoning_diversity_index", "computational_efficiency_score", "generalization_gap"],
+        "log_examples": true,
+        "num_examples_to_log": 10
+    }
+}
